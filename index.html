@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Character Counter</h1>
+
+        <textarea
+            id="text"
+            maxlength="200"
+            placeholder="Type here..."></textarea>
+
+        <p>
+            Typed characters:
+            <span id="typed">0</span>/200
+        </p>
+
+        <p>
+            Remaining characters:
+            <span id="remaining">200</span>
+        </p>
+
+    </div>
+
+    <script>
+
+        let text = document.getElementById("text");
+        let typed = document.getElementById("typed");
+        let remaining = document.getElementById("remaining");
+
+        text.addEventListener("input", function(){
+
+            let count = text.value.length;
+
+            typed.textContent = count;
+            remaining.textContent = 200 - count;
+
+        });
+
+    </script>
+
+</body>
+</html>
